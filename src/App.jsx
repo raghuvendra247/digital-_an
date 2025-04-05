@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import CardGrid from './Component/Card'
 import Footer from './Component/Footer'
+import  Content from './Component/Content'
+import Logoslider  from "./Component/Logoslider";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for menu toggle
 
 const images = [
@@ -33,67 +35,67 @@ function App() {
 
   return (
     <>
-      {/* Navbar */}
-      <nav className="py-4 px-6 md:px-16 bg-white shadow-lg ">
-        <div className="flex justify-between items-center ">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <img
-              src="https://img.freepik.com/free-vector/colorful-letter-gradient-logo-design_474888-2309.jpg"
-              alt="logo"
-              className="w-16 h-16 object-contain"
-            />
-            <h1 className="text-lg font-bold">Logo</h1>
-          </div>
+      <nav className="fixed top-0 left-0 w-full py-4 px-6 md:px-16 bg-white shadow-lg z-50">
+  <div className="flex justify-between items-center">
+    {/* Logo */}
+    <div className="flex items-center space-x-2">
+      <img
+        src="./img/file.png"
+        alt="logo"
+        className="w-16 h-16 object-contain"
+      />
+      <h1 className="text-lg font-bold"><img src='./img/lohogo.png' className="w-28" alt='logoname'/> </h1>
+    </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6 text-lg">
-            <h1 className="cursor-pointer hover:text-red-400 hover:underline">Home</h1>
-            <h1 className="cursor-pointer hover:text-red-400 hover:underline">Features</h1>
-            <h1 className="cursor-pointer hover:text-red-400 hover:underline">Pricing</h1>
-            <h1 className="cursor-pointer hover:text-red-400 hover:underline">Testimonial</h1>
-          </div>
+    {/* Desktop Menu */}
+    <div className="hidden md:flex items-center space-x-6 text-lg">
+      <h1 className="cursor-pointer hover:text-red-400 hover:underline">Home</h1>
+      <h1 className="cursor-pointer hover:text-red-400 hover:underline">Features</h1>
+      <h1 className="cursor-pointer hover:text-red-400 hover:underline">Pricing</h1>
+      <h1 className="cursor-pointer hover:text-red-400 hover:underline">Testimonial</h1>
+    </div>
 
-          {/* Auth Buttons (Desktop) */}
-          <div className="hidden md:flex items-center space-x-4 font-bold">
-            <h1 className="cursor-pointer">Sign In</h1>
-            <button
-              type="button"
-              className="border border-red-500 px-4 py-1 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition"
-            >
-              Sign Up
-            </button>
-          </div>
+    {/* Auth Buttons (Desktop) */}
+    <div className="hidden md:flex items-center space-x-4 font-bold">
+      <h1 className="cursor-pointer">Sign In</h1>
+      <button
+        type="button"
+        className="border border-red-500 px-4 py-1 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition"
+      >
+        Sign Up
+      </button>
+    </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-            </button>
-          </div>
-        </div>
+    {/* Mobile Menu Button */}
+    <div className="md:hidden">
+      <button onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </button>
+    </div>
+  </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden mt-4 flex flex-col items-center space-y-4 bg-white py-4 rounded-lg shadow-lg">
-            <h1 className="cursor-pointer hover:text-red-400 hover:underline">Home</h1>
-            <h1 className="cursor-pointer hover:text-red-400 hover:underline">Features</h1>
-            <h1 className="cursor-pointer hover:text-red-400 hover:underline">Pricing</h1>
-            <h1 className="cursor-pointer hover:text-red-400 hover:underline">Testimonial</h1>
-            <hr className="w-1/2 border-red-500" />
-            <h1 className="cursor-pointer hover:text-red-400">Sign In</h1>
-            <button
-              type="button"
-              className="border border-red-500 px-4 py-1 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition"
-            >
-              Sign Up
-            </button>
-          </div>
-        )}
-      </nav>
+  {/* Mobile Menu */}
+  {isOpen && (
+    <div className="md:hidden mt-4 flex flex-col items-center space-y-4 bg-white py-4 rounded-lg shadow-lg">
+      <h1 className="cursor-pointer hover:text-red-400 hover:underline">Home</h1>
+      <h1 className="cursor-pointer hover:text-red-400 hover:underline">Features</h1>
+      <h1 className="cursor-pointer hover:text-red-400 hover:underline">Pricing</h1>
+      <h1 className="cursor-pointer hover:text-red-400 hover:underline">Testimonial</h1>
+      <hr className="w-1/2 border-red-500" />
+      <h1 className="cursor-pointer hover:text-red-400">Sign In</h1>
+      <button
+        type="button"
+        className="border border-red-500 px-4 py-1 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition"
+      >
+        Sign Up
+      </button>
+    </div>
+  )}
+</nav>
+
 
      {/* Carousel */}
-<div className="relative w-full mx-auto mt-6">
+<div className="relative w-full mx-auto mt-24">
   {/* Carousel Wrapper */}
   <div className="relative h-56 md:h-96 w-full overflow-hidden rounded-lg">
     {images.map((src, index) => (
@@ -138,6 +140,9 @@ function App() {
   </button>
 </div>
 
+ <Logoslider/>
+
+ <Content/>
       <CardGrid/>
       <Footer/>
     </>

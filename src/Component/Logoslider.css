@@ -1,0 +1,44 @@
+.slider-wrapper {
+    overflow: hidden;
+    background: #f3f4f6;
+    padding: 1rem 0;
+  }
+  
+  .slider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .slide-track {
+    display: flex;
+    width: calc(250px * 10); /* width of one logo * number of total logos */
+    animation: scroll 20s linear infinite;
+  }
+  
+  .slide {
+    width: 250px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slide img {
+    width: 80px;
+    height: 80px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  

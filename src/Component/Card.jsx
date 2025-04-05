@@ -1,46 +1,135 @@
 import React from "react";
-
-const cards = [
-  {
-    title: "Card 1",
-    description: "This is the first card description.",
-    image: "https://thumbs.dreamstime.com/b/spring-wallpaper-creating-award-winning-photograph-pic-encapsulates-timeless-beauty-tranquility-nature-351384930.jpg",
-  },
-  {
-    title: "Card 2",
-    description: "This is the second card description.",
-    image: "https://thumbs.dreamstime.com/b/spring-wallpaper-creating-award-winning-photograph-pic-encapsulates-timeless-beauty-tranquility-nature-351384024.jpg",
-  },
-  {
-    title: "Card 3",
-    description: "This is the third card description.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2OXG43icC6A_dyDxX_RHTS3WRM0Lg8SEL8Q&s",
-  },
-];
+import { RiWhatsappLine } from "react-icons/ri";
+import { FaSquareInstagram } from "react-icons/fa6";
 
 function CardGrid() {
   return (
-    <div className="container mx-auto p-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl"
-          >
-            <img
-              src={card.image}
-              alt={card.title}
-              className="w-full h-48 object-cover hover:scale-95 transition duration-300"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">{card.title}</h2>
-              <p className="text-gray-600 mt-2">{card.description}</p>
-              <button className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
-                Learn More
-              </button>
-            </div>
-          </div>
-        ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 md:px-12 lg:px-38 justify-center">
+      {/* Card 1 */}
+      <div className="w-full max-w-sm mx-auto rounded-lg overflow-hidden shadow-lg bg-yellow-100 p-6">
+        <p className="text-lg font-semibold">Starter</p>
+        <div className="font-bold text-2xl mb-2">₹2,757</div>
+        <p className="text-gray-700 text-base font-bold">Pick any one channel</p>
+         <div className="flex  gap-1 mt-2">
+          <span className="flex items-center bg-green-200 rounded-sm px-4 py-2 text-sm font-semibold text-gray-700">
+            <RiWhatsappLine className="mr-1 text-green-500 text-xl" /> WhatsApp
+          </span>
+          <span className="flex items-center bg-gray-200 rounded-sm px-4 py-2 text-sm font-semibold text-gray-700">
+            <FaSquareInstagram className="mr-1 text-red-400 text-xl" /> Instagram
+          </span>
+        </div>
+        <p className="mt-4 font-bold">Unlimited Agents <span className="font-normal">lowest</span></p>
+        <p className="font-bold mt-2">Conversation Charges*</p>
+        <table className="w-full border-collapse text-left mt-2">
+          <tbody>
+            <tr><td className="py-2 pr-10">Marketing</td><td className="py-2">Rs 0.882</td></tr>
+            <tr><td className="py-2 pr-10">Authentication</td><td className="py-2">Rs 0.129</td></tr>
+            <tr><td className="py-2 pr-10">Utility</td><td className="py-2">Rs 0.160</td></tr>
+            <tr><td className="py-2 pr-10">Service</td><td className="py-2">FREE</td></tr>
+          </tbody>
+        </table>
+        <button className="bg-yellow-500 w-full py-2 rounded-md font-semibold hover:bg-yellow-600 transition mt-4">
+          Start Free Trial
+        </button>
+      </div>
+      
+      {/* Card 2 */}
+      <div className="w-full max-w-sm mx-auto rounded-lg overflow-hidden shadow-lg text-white bg-green-400 p-6">
+        <p className="text-lg font-semibold">Growth</p>
+        <div className="font-bold text-2xl mb-2">₹6,897</div>
+        <p className="text-white font-bold">Includes both channels</p>
+        <div className="flex  gap-1 mt-2">
+          <span className="flex items-center bg-green-200 rounded-sm px-4 py-2 text-sm font-semibold text-gray-700">
+            <RiWhatsappLine className="mr-1 text-green-500 text-xl" /> WhatsApp
+          </span>
+          <span className="flex items-center bg-gray-200 rounded-sm px-4 py-2 text-sm font-semibold text-gray-700">
+            <FaSquareInstagram className="mr-1 text-red-400 text-xl" /> Instagram
+          </span>
+        </div>
+        <p className="mt-4 font-bold">Unlimited Agents <span className="font-normal">lowest</span></p>
+        <p className="font-bold mt-2">Conversation Charges*</p>
+        <table className="w-full border-collapse text-left mt-2">
+          <tbody>
+            <tr><td className="py-2 pr-10">Marketing</td><td className="py-2">Rs 0.871</td></tr>
+            <tr><td className="py-2 pr-10">Authentication</td><td className="py-2">Rs 0.128</td></tr>
+            <tr><td className="py-2 pr-10">Utility</td><td className="py-2">Rs 0.150</td></tr>
+            <tr><td className="py-2 pr-10">Service</td><td className="py-2">FREE</td></tr>
+          </tbody>
+        </table>
+        <button className="bg-green-700 w-full py-2 rounded-md text-white font-semibold hover:bg-yellow-600 transition mt-4">
+          Start Free Trial
+        </button>
+      </div>
+      
+      {/* Duplicate Card 1 */}
+      <div className="w-full max-w-sm mx-auto rounded-lg overflow-hidden shadow-lg bg-gray-300 p-6">
+        <p className="text-lg font-semibold text-blue-400">Advance</p>
+        <div className="font-bold text-2xl mb-2">₹9,657</div>
+        <p className="text-gray-700 text-base font-bold">Includes both channels</p>
+        <div className="flex  gap-1 mt-2">
+          <span className="flex items-center bg-green-200 rounded-sm px-4 py-2 text-sm font-semibold text-gray-700">
+            <RiWhatsappLine className="mr-1 text-green-500 text-xl" /> WhatsApp
+          </span>
+          <span className="flex items-center bg-gray-200 rounded-sm px-4 py-2 text-sm font-semibold text-gray-700">
+            <FaSquareInstagram className="mr-1 text-red-400 text-xl" /> Instagram
+          </span>
+        </div>
+         {/* Unlimited Agents & Charges */}
+      <p className="mt-4 font-bold">Unlimited Agents <span className="font-normal">lowest</span></p>
+      <p className="font-bold mt-2">Conversation Charges*</p>
+
+      {/* Pricing Table */}
+      <div className="overflow-x-auto mt-2">
+        <table className="w-full border-collapse text-left">
+          <tbody>
+            <tr >
+              <td className="py-2 pr-10">Marketing</td>
+              <td className="py-2">Rs 0.863</td>
+            </tr>
+            <tr >
+              <td className="py-2 pr-10">Authentication</td>
+              <td className="py-2">Rs 0.127</td>
+            </tr>
+            <tr >
+              <td className="py-2 pr-10">Utility</td>
+              <td className="py-2">Rs 0.140</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-10">Service</td>
+              <td className="py-2">FREE</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        <button className="bg-yellow-500 w-full py-2 rounded-md font-semibold hover:bg-yellow-600 transition mt-4">
+          Start Free Trial
+        </button>
+      </div>
+      
+      {/* Duplicate Card 2 */}
+      <div className="w-full max-w-sm mx-auto rounded-lg overflow-hidden shadow-lg  bg-cyan-200 text-black p-6">
+        <p className="text-lg font-semibold">Enterprise</p>
+        <div className="font-bold text-2xl mb-2">On request</div>
+        <p className="text-white font-bold">Includes both channels</p>
+        <div className="flex  gap-1 mt-2">
+          <span className="flex items-center bg-green-200 rounded-sm px-4 py-2 text-sm font-semibold text-gray-700">
+            <RiWhatsappLine className="mr-1 text-green-500 text-xl" /> WhatsApp
+          </span>
+          <span className="flex items-center bg-gray-200 rounded-sm px-4 py-2 text-sm font-semibold text-gray-700">
+            <FaSquareInstagram className="mr-1 text-red-400 text-xl" /> Instagram
+          </span>
+        </div>
+         {/* Unlimited Agents & Charges */}
+      <p className="mt-4 font-bold py-2">Unlimited Agents <span className="font-normal">lowest</span></p>
+      <p className="font-bold mt-2 pb-2">Conversation Charges*</p>
+      <p className="font-bold mt-2 pb-2">No Markup Charges</p>
+      <p className="font-bold mt-2 pb-2">Dedicates Account Manager</p>
+
+      
+<br/><br/>
+        <button className="bg-green-700 w-full py-2 rounded-md text-white font-semibold hover:bg-yellow-600 transition mt-5">
+          Get  In Touch
+        </button>
       </div>
     </div>
   );
