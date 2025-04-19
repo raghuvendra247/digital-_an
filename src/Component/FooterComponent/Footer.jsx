@@ -1,5 +1,5 @@
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaTwitter, FaFacebookF, FaYoutube, FaLinkedinIn } from "react-icons/fa";
-
+import {Link} from 'react-router-dom'
 const Footer = () => {
   return (
     <footer className="bg-gray-700 text-white mt-5 pt-5">
@@ -35,8 +35,8 @@ const Footer = () => {
             <li><a href="#" className="hover:text-blue-400">About Us</a></li>
             <li><a href="#" className="hover:text-blue-400">Contact Us</a></li>
             <li><a href="#" className="hover:text-blue-400">Our Services</a></li>
-            <li><a href="#" className="hover:text-blue-400">Terms & Conditions</a></li>
-            <li><a href="#" className="hover:text-blue-400">Support</a></li>
+            <li><Link to="/Term_condition" className="hover:text-blue-400">Terms & Conditions</Link></li>
+            <li><Link to="/privacy" className="hover:text-blue-400">Privacy</Link></li>
           </ul>
         </div>
         {/* Newsletter */}

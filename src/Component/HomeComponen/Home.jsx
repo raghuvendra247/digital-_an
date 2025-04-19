@@ -1,0 +1,159 @@
+import { useState, useEffect } from "react";
+import CardGrid from '../CardComponent/Card'
+import Footer from '../FooterComponent/Footer'
+import  Content from '../ContentComponent/Content'
+
+import Logoslider  from "../LogosliderComponent/Logoslider";
+import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for menu toggle
+import { Link} from "react-router-dom";
+
+const images = [
+  "https://wowslider.com/sliders/demo-77/data1/images/tuscany428041.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK3JdBOE563pBT6zdCFbCfpBLphFq4DyTV7A&s",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT770H3OoLSU6OFtG6qsQx9RY4qyS4qvW2cLA&s",
+  "https://wowslider.com/sliders/demo-77/data1/images/road220058.jpg",
+  "https://wowslider.com/sliders/demo-77/data1/images/tuscany428041.jpg",
+];
+
+function Home () {
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-slide functionality (every 3 seconds)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <>
+      
+<nav className="fixed top-0 left-0 w-full py-4 px-6 md:px-16 bg-white shadow-lg z-50">
+  <div className="flex justify-between items-center">
+    {/* Logo */}
+    <div className="flex items-center space-x-2">
+      <img
+        src="./img/file.png"
+        alt="logo"
+        className="w-16 h-16 object-contain"
+      />
+      <h3 className="text-lg font-bold"><img src='./img/lohogo.png' className="w-28" alt='logoname'/> </h3>
+    </div>
+
+    {/* Desktop Menu */}
+    <div className="hidden md:flex items-center space-x-6 text-sm">
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline">Home</h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline"><Link to="/feature" style={{"text-decoration": "none","color":"black"}}>Features</Link></h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline">Pricing</h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline">Testimonial</h5>
+    </div>
+
+    {/* Auth Buttons (Desktop) */}
+    <div className="hidden md:flex items-center space-x-4 font-bold">
+      <h5 className="cursor-pointer">Sign In</h5>
+      <button
+        type="button"
+        className="border border-red-500 px-4 py-1 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition"
+      >
+        Sign Up
+      </button>
+    </div>
+
+    {/* Mobile Menu Button */}
+    <div className="md:hidden">
+      <button onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </button>
+    </div>
+  </div>
+
+  {/* Mobile Menu */}
+  {isOpen && (
+    <div className="md:hidden mt-4 flex flex-col items-center space-y-4 bg-white py-4 rounded-lg shadow-lg">
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline">Home</h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline"><Link to="/feature" style={{"text-decoration": "none","color":"black"}}>Features</Link></h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline">Pricing</h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline">Testimonial</h5>
+      <hr className="w-1/2 border-red-500" />
+      <h5 className="cursor-pointer hover:text-red-400">Sign In</h5>
+      <button
+        type="button"
+        className="border border-red-500 px-4 py-1 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition"
+      >
+        Sign Up
+      </button>
+    </div>
+  )}
+</nav>
+
+
+     {/* Carousel */}
+<div className="relative w-full mx-auto mt-24">
+  {/* Carousel Wrapper */}
+  <div className="relative h-56 md:h-96 w-full overflow-hidden rounded-lg">
+    {images.map((src, index) => (
+      <img
+        key={index}
+        src={src}
+        alt={`Slide ${index + 1}`}
+        className={`absolute w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+          index === currentIndex ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    ))}
+  </div>
+
+  {/* Slider indicators */}
+  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+    {images.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => setCurrentIndex(index)}
+        className={`w-3 h-3 rounded-full ${
+          currentIndex === index ? "bg-red-500" : "bg-gray-400"
+        }`}
+      />
+    ))}
+  </div>
+
+  {/* Previous Button */}
+  <button
+    onClick={prevSlide}
+    className="absolute top-1/2 left-4 transform -translate-y-1/2 z-30 bg-white/30 p-2 rounded-full hover:bg-white/50"
+  >
+    ◀
+  </button>
+
+  {/* Next Button */}
+  <button
+    onClick={nextSlide}
+    className="absolute top-1/2 right-4 transform -translate-y-1/2 z-30 bg-white/30 p-2 rounded-full hover:bg-white/50"
+  >
+    ▶
+  </button>
+</div>
+ <Logoslider/>
+ {/* <Feature/> */}
+
+ <Content/>
+      <CardGrid/>
+      <Footer/>
+      
+      
+
+
+    </>
+  );
+}
+
+export default Home;

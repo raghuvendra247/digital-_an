@@ -13,18 +13,18 @@ const Content = () => {
         />
       </div>
       <div className='w-full md:w-1/2  p-5 '>
-        <h1 className='text-sm md:text-base lg:text-lg'>
+        <h3 className='text-sm md:text-base lg:text-lg'>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex ea optio, numquam natus sit molestiae perferendis ipsam laboriosam illo soluta aliquid, facere eos? Optio, accusantium! Iste odio ex molestias cupiditate.
-        </h1>
+        </h3>
       </div>
     </div>
 
     <div className='flex flex-col md:flex-row justify-between items-center px-5 md:px-20 lg:px-40 py-5 space-y-5 md:space-y-0 md:space-x-5 '>
      
       <div className='w-full md:w-1/2  p-5 '>
-      <h1 className="text-lg md:text-xl font-bold text-4xl lg:text-3xl">
+      <h4 className="text-lg md:text-xl font-bold text-4xl lg:text-3xl">
   Acquire New Customers in Minutes with AI-powered WhatsApp Chat Ads
-</h1>
+</h4>
 <br/>
 <div className='flex justify-between items-center'>
 {/* <FaRegCircleCheck className="text-green-600 font-bold " /> */}
@@ -32,8 +32,8 @@ Run Click to WhatsApp Ads (CTWA) without leaving the platform
 </div>
 
 <br/>
-        <h1> Get AI generated ads on WhatsApp personalised to your business and auto targeted for best results</h1><br/>
-        <h1> Advanced WhatsApp analytics to track CTWA conversions and ROAS</h1>
+        <h4> Get AI generated ads on WhatsApp personalised to your business and auto targeted for best results</h4><br/>
+        <h4> Advanced WhatsApp analytics to track CTWA conversions and ROAS</h4>
       </div>
 
       <div className=' w-full md:w-1/2 flex justify-center'>
@@ -53,9 +53,9 @@ Run Click to WhatsApp Ads (CTWA) without leaving the platform
     <img src="./src/assets/Frame.webp " alt="imag"/>
     </div>
     <div >
-    <h1 className="text-lg md:text-xl font-bold text-4xl lg:text-3xl" >
+    <h4 className="text-lg md:text-xl font-bold text-4xl lg:text-3xl" >
     Provide Better Customer Support on WhatsApp and Instagram
-</h1><br/>
+</h4><br/>
     
 
 <ol className="text-2xl space-y-3.5">

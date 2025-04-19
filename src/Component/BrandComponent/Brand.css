@@ -1,0 +1,17 @@
+/* TrustedBySection.css */
+
+@keyframes scrollMarquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .marquee {
+    display: flex;
+    width: max-content;
+    animation: scrollMarquee 25s linear infinite;
+  }
+  
