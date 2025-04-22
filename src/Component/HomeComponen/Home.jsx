@@ -52,18 +52,18 @@ function Home () {
 
     {/* Desktop Menu */}
     <div className="hidden md:flex items-center space-x-6 text-sm">
-      <h5 className="cursor-pointer hover:text-red-400 hover:underline">Home</h5>
-      <h5 className="cursor-pointer hover:text-red-400 hover:underline"><Link to="/feature" style={{"text-decoration": "none","color":"black"}}>Features</Link></h5>
-      <h5 className="cursor-pointer hover:text-red-400 hover:underline">Pricing</h5>
-      <h5 className="cursor-pointer hover:text-red-400 hover:underline">Testimonial</h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline"style={{"fontSize":"16px","color":"grey"}}>Home</h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline"><Link to="/feature" style={{"text-decoration": "none","color":"grey","fontSize":"16px"}}>Features</Link></h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline"style={{"fontSize":"16px","color":"grey"}}>Pricing</h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline"style={{"fontSize":"16px","color":"grey"}}>Testimonial</h5>
     </div>
 
     {/* Auth Buttons (Desktop) */}
     <div className="hidden md:flex items-center space-x-4 font-bold">
-      <h5 className="cursor-pointer">Sign In</h5>
+      <h5 className="cursor-pointer"style={{"fontSize":"16px","color":"grey"}}>Sign In</h5>
       <button
         type="button"
-        className="border border-red-500 px-4 py-1 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition"
+        className="border border-red-500 px-4 py-1 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition"style={{"fontSize":"16px"}}
       >
         Sign Up
       </button>
@@ -80,9 +80,9 @@ function Home () {
   {/* Mobile Menu */}
   {isOpen && (
     <div className="md:hidden mt-4 flex flex-col items-center space-y-4 bg-white py-4 rounded-lg shadow-lg">
-      <h5 className="cursor-pointer hover:text-red-400 hover:underline">Home</h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline" >Home</h5>
       <h5 className="cursor-pointer hover:text-red-400 hover:underline"><Link to="/feature" style={{"text-decoration": "none","color":"black"}}>Features</Link></h5>
-      <h5 className="cursor-pointer hover:text-red-400 hover:underline">Pricing</h5>
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline"style={{"color":"grey","fontSize":"16px"}}>Pricing</h5>
       <h5 className="cursor-pointer hover:text-red-400 hover:underline">Testimonial</h5>
       <hr className="w-1/2 border-red-500" />
       <h5 className="cursor-pointer hover:text-red-400">Sign In</h5>
@@ -146,7 +146,9 @@ function Home () {
  {/* <Feature/> */}
 
  <Content/>
+ <br/><br/>
       <CardGrid/>
+      <br/>
       <Footer/>
       
       

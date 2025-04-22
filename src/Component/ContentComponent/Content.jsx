@@ -13,18 +13,19 @@ const Content = () => {
         />
       </div>
       <div className='w-full md:w-1/2  p-5 '>
-        <h3 className='text-sm md:text-base lg:text-lg'>
+        <p className='text-sm md:text-base lg:text-lg' style={{"fontSize":"16px"}}>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex ea optio, numquam natus sit molestiae perferendis ipsam laboriosam illo soluta aliquid, facere eos? Optio, accusantium! Iste odio ex molestias cupiditate.<br/><br/>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex ea optio, numquam natus sit molestiae perferendis ipsam laboriosam illo soluta aliquid, facere eos? Optio, accusantium! Iste odio ex molestias cupiditate.
-        </h3>
+        </p>
       </div>
     </div>
 
     <div className='flex flex-col md:flex-row justify-between items-center px-5 md:px-20 lg:px-40 py-5 space-y-5 md:space-y-0 md:space-x-5 '>
      
       <div className='w-full md:w-1/2  p-5 '>
-      <h4 className="text-lg md:text-xl font-bold text-4xl lg:text-3xl">
+      <h5 className="text-lg md:text-xl font-bold text-4xl lg:text-3xl">
   Acquire New Customers in Minutes with AI-powered WhatsApp Chat Ads
-</h4>
+</h5>
 <br/>
 <div className='flex justify-between items-center'>
 {/* <FaRegCircleCheck className="text-green-600 font-bold " /> */}
@@ -32,8 +33,8 @@ Run Click to WhatsApp Ads (CTWA) without leaving the platform
 </div>
 
 <br/>
-        <h4> Get AI generated ads on WhatsApp personalised to your business and auto targeted for best results</h4><br/>
-        <h4> Advanced WhatsApp analytics to track CTWA conversions and ROAS</h4>
+        <h5> Get AI generated ads on WhatsApp personalised to your business and auto targeted for best results</h5><br/>
+        <h5> Advanced WhatsApp analytics to track CTWA conversions and ROAS</h5>
       </div>
 
       <div className=' w-full md:w-1/2 flex justify-center'>
@@ -53,19 +54,19 @@ Run Click to WhatsApp Ads (CTWA) without leaving the platform
     <img src="./src/assets/Frame.webp " alt="imag"/>
     </div>
     <div >
-    <h4 className="text-lg md:text-xl font-bold text-4xl lg:text-3xl" >
+    <h5 className="text-lg md:text-xl font-bold text-4xl lg:text-3xl" >
     Provide Better Customer Support on WhatsApp and Instagram
-</h4><br/>
+</h5><br/>
     
 
 <ol className="text-2xl space-y-3.5">
-    <li className="flex items-center gap-2">
-        <FaRegCircleCheck className="text-green-600 font-bold" />
+    <li className="flex items-center gap-2" style={{"fontSize":"16px"}}>
+        
         <span>Provide support to your customer across their favourite channels - WhatsApp and Instagram</span>
     </li>
-    <li>CRM to manage your customers</li>
-    <li>Auto routing of multiple agents on WhatsApp and rule-based routing for better handling customer queries</li>
-    <li>Shared Team inbox with Agent performance analytics</li>
+    <li style={{"fontSize":"16px"}}>CRM to manage your customers</li>
+    <li style={{"fontSize":"16px"}}>Auto routing of multiple agents on WhatsApp and rule-based routing for better handling customer queries</li>
+    <li style={{"fontSize":"16px"}}>Shared Team inbox with Agent performance analytics</li>
 </ol>
 
 
