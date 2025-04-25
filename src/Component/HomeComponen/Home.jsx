@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import CardGrid from '../CardComponent/Card'
 import Footer from '../FooterComponent/Footer'
 import  Content from '../ContentComponent/Content'
+import Education from "../EducationComponent/Education";
 
 import Logoslider  from "../LogosliderComponent/Logoslider";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for menu toggle
@@ -53,8 +54,32 @@ function Home () {
     {/* Desktop Menu */}
     <div className="hidden md:flex items-center space-x-6 text-sm">
       <h5 className="cursor-pointer hover:text-red-400 hover:underline"style={{"fontSize":"16px","color":"grey"}}>Home</h5>
-      <h5 className="cursor-pointer hover:text-red-400 hover:underline"><Link to="/feature" style={{"text-decoration": "none","color":"grey","fontSize":"16px"}}>Features</Link></h5>
-      <h5 className="cursor-pointer hover:text-red-400 hover:underline"style={{"fontSize":"16px","color":"grey"}}>Pricing</h5>
+      <div className="relative group">
+  <h5
+    className="cursor-pointer hover:text-red-400 hover:underline"
+    style={{ fontSize: "16px", color: "grey" }}
+  >
+    Features
+  </h5>
+
+  {/* Dropdown Menu */}
+  <div className="absolute left-0 top-full mt-1 hidden group-hover:flex flex-col bg-white shadow-lg rounded-md min-w-[150px] z-50">
+    <Link
+      to="/feature"
+      className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap"
+    >
+      Feature
+    </Link>
+    <Link
+      to="/education"
+      className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 whitespace-nowrap"
+    >
+      Education
+    </Link>
+  </div>
+</div>
+
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline"><Link to="/pricing" style={{"text-decoration": "none","color":"grey","fontSize":"16px"}}>Pricing</Link>  </h5>
       <h5 className="cursor-pointer hover:text-red-400 hover:underline"style={{"fontSize":"16px","color":"grey"}}>Testimonial</h5>
     </div>
 
@@ -81,8 +106,34 @@ function Home () {
   {isOpen && (
     <div className="md:hidden mt-4 flex flex-col items-center space-y-4 bg-white py-4 rounded-lg shadow-lg">
       <h5 className="cursor-pointer hover:text-red-400 hover:underline" >Home</h5>
-      <h5 className="cursor-pointer hover:text-red-400 hover:underline"><Link to="/feature" style={{"text-decoration": "none","color":"black"}}>Features</Link></h5>
-      <h5 className="cursor-pointer hover:text-red-400 hover:underline"style={{"color":"grey","fontSize":"16px"}}>Pricing</h5>
+      <div className="w-full flex flex-col items-center">
+  <button
+    onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
+    className="cursor-pointer hover:text-red-400 hover:underline focus:outline-none text-base text-gray-700"
+  >
+    Features {isFeaturesOpen ? "▲" : "▼"}
+  </button>
+
+  {/* Dropdown menu */}
+  {isFeaturesOpen && (
+    <div className="mt-2 w-full flex flex-col items-center space-y-2">
+      <Link
+        to="/feature"
+        className="text-sm text-gray-700 hover:underline"
+      >
+        Feature
+      </Link>
+      <Link
+        to="/education"
+        className="text-sm text-gray-700 hover:underline"
+      >
+        Education
+      </Link>
+    </div>
+  )}
+</div>
+
+      <h5 className="cursor-pointer hover:text-red-400 hover:underline"><Link to="/pricing"style={{"color":"grey","fontSize":"16px"}}>Pricing </Link></h5>
       <h5 className="cursor-pointer hover:text-red-400 hover:underline">Testimonial</h5>
       <hr className="w-1/2 border-red-500" />
       <h5 className="cursor-pointer hover:text-red-400">Sign In</h5>
