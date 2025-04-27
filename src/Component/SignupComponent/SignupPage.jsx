@@ -9,7 +9,7 @@ const SignupPage = () => {
         {/* Left Side with Image */}
         <div className="col-md-5 d-flex justify-content-end">
           <img
-            src="./public/assets/ctwa-2.png"
+            src="/assets/ctwa-2.png"
             alt="WhatsApp Illustration"
             className="img-fluid"
             style={{ maxWidth: '550px' }}
